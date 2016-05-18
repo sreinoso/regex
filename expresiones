@@ -1,0 +1,54 @@
+Desc
+Convertir estructura de bbdd en array (describe <table>;)
+De 
++-----------------------------+------------------+------+-----+---------+----------------+
+| id                          | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| season_id                   | int(10) unsigned | NO   | MUL | NULL    |                |
+| user_id                     | int(10) unsigned | NO   | MUL | NULL    |                |
+| extracurri_activity_type_id | int(10) unsigned | NO   | MUL | NULL    |                |
+| hours_per_week              | decimal(5,2)     | NO   |     | NULL    |                |
+| description                 | text             | NO   |     | NULL    |                |
+| created_at                  | timestamp        | YES  |     | NULL    |                |
+| updated_at                  | timestamp        | YES  |     | NULL    |                |
++-----------------------------+------------------+------+-----+---------+----------------+
+A
+
+id
+season_id
+user_id
+extracurri_activity_type_id
+hours_per_week
+description
+created_at
+updated_at
+
+Expr
+^\| (\w*) .*|\+\-*.*
+Sust
+"\1",
+
+Desc
+Buscar lineas que no contengan un texto
+De
+ Sergio Reinoso Fuertes
+4401d92
+- Primera versión de presupuesto en pdf - Presupuesto pdf con funcionalidad enac
+2016-04-26
+ Sergio Reinoso Fuertes
+01e27ee
+- Terminada funcionalidad de recogidas
+2016-04-22
+ Sergio Reinoso Fuertes
+a06657a
+Commit para revisar DOMPDF
+2016-04-21
+
+A
+Sergio Reinoso Fuertes
+Sergio Reinoso Fuertes
+Sergio Reinoso Fuertes
+
+Expr
+^(?!(?:Sergio)).*\s*
+Sust
+
