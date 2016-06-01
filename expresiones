@@ -52,3 +52,31 @@ Expr
 ^(?!(?:Sergio)).*\s*
 Sust
 
+^MH$|^NP$|^NR$|^W$|^([0-9](\.[0-9]{1,}2)?)$|^10$
+
+
+Descr
+Convertir migrate de laravel en plantuml
+
+Expr
+(.*)?Schema::drop(.*)?
+(.*)?\*(.*)?
+ .*public function.*
+ ^class \w.*\n{
+ [{}]
+ (.*)?use (.*)?
+(.*)?Schema::create\('(\w.*)'.* --> class \2 {
+
+(.*)?\$table->engine(.*)?
+(.*)?\$table->timestamp(.*)?    
+
+^\n --> <vacio>
+^\s*\n --> <vacio>
+\$table->foreign.*on\('(\w*)'\).* -->  class {} *-- \1
+\$table->(\w.*)\('(\w*)'.*\).* --> \1 \2
+\); --> }
+
+Observaciones
+Es necesario corregir las relaciones una a una
+Revisar fichero resultante
+Falta al principio y final del documento resultante las directivas @startuml y @enduml
